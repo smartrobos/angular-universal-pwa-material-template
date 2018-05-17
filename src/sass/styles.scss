@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~normalize.css/normalize.css';
+//@import "~highlight.js/styles/androidstudio.css";
+//@import "~quill/dist/quill.snow.css";
+@import "./variables";
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+//@import 'styles/tables';
+//@import "styles/cards";
+//@import "styles/inbox";
+//@import "styles/calendar";
+@import "./misc";
+//@import "styles/tabs";
+@keyframes pageLoad {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.page-load-animation {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    animation: pageLoad linear 1;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-delay: 1.5s;
+    background: #2B303B;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+     :hover {
+        text-decoration: underline;
+    }
+}
+
+
+/** Auth CSS*/
+
+mat-error {
+    font-size: 12px;
+}
+
+.header-image {
+    text-align: center;
+    padding: 20px;
+}
+
+.bottom-text {
+    color: $primary-button;
+    font-weight: 500;
+}
+
+.main-auth-title {
+    text-align: center;
+}
+
+.auth-card {
+    padding: 15px;
+    @include mat-elevation($card-elevation);
+    margin: auto;
+}
+
+.auth-button-alignment {
+    text-align: center;
+    padding-top: 10px;
+}

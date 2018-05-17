@@ -1,0 +1,20 @@
+@import 'variables';
+.button-align {
+    text-align: center;
+}
+
+.agree-btn {
+    background-color: $primary-button;
+    color: #fff;
+}
+
+.cancel-btn {
+    background-color: $accent-button;
+    color: #fff;
+}
+
+@media (min-width:320px)and(max-width:599px) {
+    .text-size {
+        font-size: 14px;
+    }
+}

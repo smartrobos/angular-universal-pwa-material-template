@@ -1,0 +1,39 @@
+@import "variables";
+
+:host {
+  z-index: $toolbar-z-index;
+}
+
+.main-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: $toolbar-z-index;
+  background: $toolbar-background;
+  padding-right: 0;
+  height: $toolbar-height;
+  padding-left: $spacing;
+  max-width: 100%;
+  color: white;
+
+  @include mat-elevation($toolbar-elevation);
+
+  @include media-xs {
+    padding-left: $spacing/3;
+  }
+}
+
+h1.app-name {
+  margin-left: 8px;
+}
+
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+}

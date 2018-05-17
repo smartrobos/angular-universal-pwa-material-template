@@ -1,0 +1,22 @@
+<div class="layout-container" >
+  <gs-toolbar ></gs-toolbar>
+  <mat-sidenav-container class="main-sidenav-container" (backdropClick)="close('backdrop')"
+      [style.marginTop.px]="56" >
+    <mat-sidenav #sidenav [mode]="sidenavMode" [(opened)]="sidenavOpen" 
+      (opened)="sidenavState('opened')" (closed)="sidenavState('closed')"
+      (keydown.escape)="close('escape')" [fixedInViewport]="isMobile" fixedTopGap="56"
+      >
+      <gs-sidenav></gs-sidenav>
+    </mat-sidenav>
+      <mat-sidenav-content  #scrollContainer fxFlex="grow" >
+        <div class="main-container" >
+          <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+        </div>
+        <gs-footer></gs-footer>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+
+

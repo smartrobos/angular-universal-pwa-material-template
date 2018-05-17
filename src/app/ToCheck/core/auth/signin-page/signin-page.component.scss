@@ -1,0 +1,65 @@
+    @import 'variables';
+    .main-container {
+        margin: 1% 0px;
+    }
+    
+    .auth-button {
+        background-color: $primary-button;
+        min-width: 200px;
+        color: $footer-text
+    }
+    
+    .remember-me {
+        padding: 20px 0px;
+    }
+    
+    .reset-password {
+        color: $toolbar-background;
+        float: right
+    }
+    
+    .login-content {
+        padding: 5px 15px 5px;
+        .extra-options {
+            margin: 16px 0 32px;
+            .remember-me {
+                color: #777;
+            }
+        }
+    }
+    
+    .loginfacebook {
+        margin: 30px;
+        padding: 0px 30px;
+    }
+    
+    .social-btns {
+        color: #fff;
+    }
+    
+    .google {
+        background-color: #D14538;
+        margin-top: 10px;
+        color: #fff;
+    }
+    
+    .error-message {
+        color: red;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    
+    @media screen and (max-width: 599px) {
+        .loginfacebook {
+            margin: 10px;
+        }
+        .reset-password {
+            padding-top: 3px;
+        }
+    }
+    
+    @media (min-width: 600px) and (max-width: 959px) {
+        .loginfacebook {
+            margin: 10px;
+        }
+    }

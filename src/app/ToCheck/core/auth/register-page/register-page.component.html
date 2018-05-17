@@ -1,0 +1,69 @@
+<div fxFlex="95%" fxFlex.xs="99%" class="main-container">
+    <div fxLayoutAlign="center center">
+        <mat-card class="auth-card" *ngIf="!success" fxFlex="35%" fxFlex.md="40%" fxFlex.sm="50%" fxFlex.xs="95%">
+            <div class="header-image">
+                <img src="assets/logo.png">
+            </div>
+            <mat-card-title class="main-auth-title ">CREATE AN ACCOUNT</mat-card-title>
+            <div>
+                <h5 class="error-message" *ngIf="error">{{errorMessage}}</h5>
+                <!--h5 class="success-message" *ngIf="success">{{successMessage}}</h5-->
+
+                <form name="form" #registerForm="ngForm" novalidate>
+                    <div fxLayout="column">
+                        <div fxLayout="column">
+                            <mat-form-field>
+                                <input matInput placeholder="Email" name="email" [(ngModel)]="model.email" #email="ngModel" required [pattern]="pattern.email">
+                            </mat-form-field>
+                            <mat-error *ngIf="formErrors.email">
+                                {{ formErrors.email }}
+                            </mat-error>
+                        </div>
+                        <div fxLayout="column">
+                            <mat-form-field>
+                                <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required [pattern]="pattern.password"> </mat-form-field>
+                            <mat-error *ngIf="formErrors.password">
+                                {{ formErrors.password }}
+                            </mat-error>
+                        </div>
+                        <div fxLayout="column">
+                            <mat-form-field>
+                                <input matInput placeholder="Confirm Password" type="password" name="cPassword" [(ngModel)]="model.cPassword" #cPassword="ngModel" required [pattern]="pattern.password">
+                            </mat-form-field>
+                            <mat-error *ngIf="formErrors.cPassword">
+                                {{ formErrors.cPassword }}
+                            </mat-error>
+                        </div>
+
+                        <div class="termsandconditions">
+                            <mat-checkbox [(ngModel)]="checked" name="checked"> </mat-checkbox> I have read and accept <a><span class="terms" (click)="openDialog()">terms and conditions</span></a>
+
+                        </div>
+                        <br/>
+                        <div style="text-align:center">
+                            <button [disabled]="!registerForm.valid || !passwordConfPassMatch" type="submit" mat-raised-button class="auth-button" (click)="register()">CREATE AN ACCOUNT</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="auth-button-alignment ">
+                <span>Already have an account?</span><br/>
+                <a [routerLink]="['/auth/login']"><span class="bottom-text">Login</span></a>
+            </div>
+        </mat-card>
+        <mat-card class="auth-card" fxFlex="30%" fxFlex.xs="95%" *ngIf="success">
+            <div style="text-align: center">
+                <mat-icon class="s-96 mat-icon material-icons" role="img" aria-hidden="true">email</mat-icon>
+            </div>
+            <div style="text-align: center">
+                <h3>Registration Pending!</h3>
+                <p>An activation link has been sent to <span class="login-text">{{model.email}}</span>. </p>
+                <p>Please click activation link to get activated</p>
+            </div>
+            <div class="auth-button-alignment">
+                <a [routerLink]="['/auth/login']"><span class="bottom-text">Click here to login</span></a>
+            </div>
+        </mat-card>
+    </div>
+</div>

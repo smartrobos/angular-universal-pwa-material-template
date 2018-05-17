@@ -1,0 +1,52 @@
+<div fxLayout="column" fxLayout.xs="column" fxLayoutGap="10px" class="profile-styles">
+    <div class="profile-background" fxLayout="column">
+        <span fxFlex></span>
+        <div fxFlex="30%" fxFlex.xs="95%" class="profile-card" fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="0px">
+            <!--img src="assets/images/avatar1.png" class="profile-image"-->
+            <img src={{getUserImageUrl()}} class="profile-image" />
+            <h1>{{this.userInfo.userDetails.name.first}}</h1>
+        </div>
+        <div class="reset-button">
+            <span fxFlex fxHide.xs></span>
+            <a [routerLink]="['/auth/reset-password']"> <button mat-raised-button>RESET  PASSWORD</button></a>
+        </div>
+    </div>
+    <div>
+        <mat-card fxFlex="70%" fxFlex.xs="98%" class="card">
+
+            <p class="heading">General Information</p>
+            <div class="title-division">
+                <p><span class="general-title">Gender</span> <br/> Female</p>
+            </div>
+            <div class="title-division">
+                <p><span class="general-title">Birthday</span> <br/> Aug 11th,1991</p>
+            </div>
+            <div class="title-division">
+                <p><span class="general-title">Locations</span> <br/> Hyderabad</p>
+            </div>
+            <div class="title-division">
+                <p><span class="general-title">About me</span> <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue,
+                    vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.</p>
+            </div>
+        </mat-card>
+
+    </div>
+    <div>
+        <mat-card fxFlex="70%" fxFlex.xs="98%" class="card">
+
+            <p class="heading">Contact</p>
+            <div style="padding:0px 20px">
+                <p><span class="general-title">Address</span> <br/> Ut pharetra luctus est quis sodales. Duis nisi tortor, bibendum eget tincidunt, aliquam ac elit. Mauris nec euismod odio.</p>
+            </div>
+            <div style="padding:0px 20px">
+                <p><span class="general-title">Tel</span> <br/>+6 555 6600 <br/>+9 555 5255</p>
+            </div>
+            <div style="padding:0px 20px">
+                <p><span class="general-title">Website</span> <br/> withinpixels.com</p>
+            </div>
+            <div style="padding:0px 20px">
+                <p><span class="general-title">Email</span> <br/> mail@creapond.com</p>
+            </div>
+        </mat-card>
+    </div>
+</div>

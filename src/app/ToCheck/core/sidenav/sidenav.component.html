@@ -1,0 +1,6 @@
+<div class="sidenav" fxFlex="grow" fxLayout="column">
+    <gs-scrollbar class="sidenav-items" fxFlex="grow" fxLayout="column">
+        <gs-sidenav-item *ngFor="let item of items$ | async" [item]="item" [level]="1"></gs-sidenav-item>
+    </gs-scrollbar>
+</div>
+

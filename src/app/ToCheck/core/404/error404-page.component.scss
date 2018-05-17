@@ -1,0 +1,39 @@
+/* http://uxmilkshake.com/how-to-create-a-responsive-full-height-image-with-pure-css/ */
+/* Not Used Stored for Reference */
+.page-not-found {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 90%;
+    height: 90%;
+}
+
+.header-image {
+    background-image: url("assets/images/PageNotFound.png");
+    background-size: cover;
+}
+
+.bg {
+
+    /* The image used */
+    background-image: url("assets/images/PageNotFound.png");
+    margin : 0px;
+    /* Full height */
+    height: 150%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    /* Font Colour */
+    color:white;
+    top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}

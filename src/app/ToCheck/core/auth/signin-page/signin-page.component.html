@@ -1,0 +1,42 @@
+<div fxFlex="95%" fxFlex.xs="99%" class="main-container">
+    <div fxLayoutAlign="center center">
+        <mat-card class="auth-card" fxFlex="30%" fxFlex.md="40%" fxFlex.sm="50%" fxFlex.xs="95%">
+            <div class="header-image ">
+                <img src="assets/logo.png">
+            </div>
+            <mat-card-title class="main-auth-title">LOGIN</mat-card-title>
+            <h4 class="error-message" *ngIf="error">{{message}}</h4>
+            <form name="form" #loginForm="ngForm" novalidate>
+                <div class="login-content" fxLayout="column" fxLayoutAlign="start stretch">
+                    <mat-form-field fxFlex>
+                        <input matInput placeholder="Email" name="email" [(ngModel)]="model.email" #email="ngModel" required [pattern]="pattern.email">
+                    </mat-form-field>
+                    <mat-error *ngIf="formErrors.email">
+                        {{ formErrors.email }}
+                    </mat-error>
+                    <mat-form-field fxFlex>
+                        <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required [pattern]="pattern.password">
+                    </mat-form-field>
+                    <mat-error *ngIf="formErrors.password">
+                        {{ formErrors.password }}
+                    </mat-error>
+
+                    <div class="remember-me">
+                        <mat-checkbox class="remember-me">Remember Me</mat-checkbox>
+                        <a [routerLink]="['/auth/forgot-password']"> <span class="reset-password">Forgot Password ?</span></a>
+                    </div>
+                    <div fxLayoutGap="20px" fxLayout="row" fxLayoutAlign="center center">
+                        <button mat-raised-button [disabled]="!loginForm.valid" class="auth-button" type="submit" (click)="directlogin()">LOGIN</button>
+                    </div>
+                </div>
+            </form>
+            <div fxLayoutAlign="start stretch" fxLayout="column" class="loginfacebook">
+                <button color="primary" id="facebookBtn" (click)="facebooklogin()" mat-raised-button class="social-btns"><img src="assets/facebook.png" width="30px" height="30px">Login With Facebook</button>
+                <button mat-raised-button class="google" id="googleBtn" (click)="googlelogin()"><img src="assets/google-plus-icon.png" width="30px" height="30px">Login With Gmail</button>
+            </div>
+            <div class="auth-button-alignment">
+                <span>Don't have an account?</span><br/>
+                <a [routerLink]="['/auth/register']"><span class="bottom-text">Create an account</span></a>
+            </div>
+        </mat-card>
+    </div>

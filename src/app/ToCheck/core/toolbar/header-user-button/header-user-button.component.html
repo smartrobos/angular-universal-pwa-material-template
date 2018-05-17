@@ -1,0 +1,49 @@
+<div *ngIf="!isLoggedIn">
+    <button aria-label="Login Button" mat-icon-button [routerLink]="['/auth/login']">
+        <mat-icon style="color:#fff"> account_circle</mat-icon>
+    </button>
+</div>
+
+<div *ngIf="isLoggedIn">
+    <button *ngIf="isaddtoCart" aria-label="Login Button" mat-icon-button [routerLink]="['/pay/cart']">
+        <mat-icon style="color:#fff"> shopping_cart</mat-icon>
+    </button>
+    <button aria-label="Profile Details Button" mat-icon-button [matMenuTriggerFor]="options">
+        <img src={{getUserImageUrl()}} class="profile-icon" >
+        <!--img class="profile-icon"  src="assets/images/avatar1.png" /-->
+        <div class="triangle-up" *ngIf="isMenuOpen"></div>
+    </button>
+
+    <div fxLayout="column" fxFlex>
+        <mat-menu #options="matMenu" [overlapTrigger]="false" xPosition="after">
+            <div fxLayout="row" class="panel-padding">
+                <div class="profile-image">
+                    <img src={{getUserImageUrl()}}>
+                    <!--img src="assets/images/avatar1.png" /-->
+                </div>
+                <div class="user-profile" fxLayout="column">
+                    <span class="user-email">
+                        <b>{{getUserEmail()}}</b>
+                      </span>
+                    <br/>
+                    <span class="user-display-name">{{getUserDisplayName()}}</span>
+                </div>
+            </div>
+            <div width="70%" class="divider">
+                <mat-divider></mat-divider>
+                <br/>
+            </div>
+            <div fxLayout="row" class="panel-padding-btns">
+                <div>
+                    <button aria-label="Sign out Button" mat-raised-button class="sign-out-btn" (click)="logout()"> Sign Out </button>
+                </div>
+                <span fxFlex></span>
+                <div>
+                    <a [routerLink]=" [ '/profile'] ">
+                        <button aria-label="MyAccount Button" mat-raised-button class="myaccount-btn">My Account</button>
+                    </a>
+                </div>
+            </div>
+        </mat-menu>
+    </div>
+</div>

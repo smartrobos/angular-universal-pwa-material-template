@@ -1,0 +1,64 @@
+@import 'variables';
+.main-container {
+    margin: 1% 0px;
+}
+
+.terms {
+    color: $primary-button;
+     :hover {
+        text-decoration: underline;
+    }
+}
+
+.success-message {
+    // color: green;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin: 4em 0px;
+}
+
+.error-message {
+    color: $warn-button;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.termsandconditions {
+    font-size: 14px;
+    padding: 20px 0px;
+}
+
+.confirmation-container {
+    margin: 6% 0;
+}
+
+i.s-96,
+mat-icon.s-96 {
+    font-size: 70px!important;
+    width: 70px!important;
+    height: 70px!important;
+    min-width: 70px!important;
+    min-height: 70px!important;
+    line-height: 70px!important;
+}
+
+.icon,
+.mat-icon,
+.secondary-text {
+    color: rgba(0, 0, 0, .54);
+}
+
+.auth-button {
+    background-color: $primary-button;
+    min-width: 200px;
+    color: $footer-text
+}
+
+@media (min-width:320px)and(max-width:599px) {
+    .main-container {
+        margin: auto;
+    }
+}

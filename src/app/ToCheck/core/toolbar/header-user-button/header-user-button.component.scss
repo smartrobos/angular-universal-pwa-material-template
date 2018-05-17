@@ -1,0 +1,61 @@
+.profile-icon {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.panel-padding {
+    padding: 10px;
+}
+
+.profile-image {
+    padding-right: 5px;
+    width: 50%;
+    img {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.user-email {
+    color: #312C2C;
+    font-size: 16px;
+}
+
+.user-display-name {
+    color: #312C2C;
+    font-size: 12px;
+}
+
+.panel-padding-btns {
+    padding: 0px 10px;
+}
+
+.sign-out-btn {
+    background-color: #0B89E0;
+    color: #fff;
+}
+
+.myaccount-btn {
+    background-color: #E51E10;
+    color: #fff;
+}
+
+.user-profile {
+    width: 70%;
+    word-wrap: break-word;
+}
+
+.divider {
+    margin-top: 5px;
+    padding: 0px 10px;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid rgb(255, 254, 254);
+}

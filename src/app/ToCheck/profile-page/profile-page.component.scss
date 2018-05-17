@@ -1,0 +1,61 @@
+@import 'variables';
+.profile-styles {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.profile-background {
+    background-color: $toolbar-background;
+    padding: 30px;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.profile-card {
+    margin-top: 5em
+}
+
+h1 {
+    color: #fff;
+    font-weight: 400;
+    margin: 1em 0px;
+}
+
+.heading {
+    background-color: $toolbar-background;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 20px;
+}
+
+.card {
+    padding: 0px;
+    margin: 10px;
+}
+
+.general-title {
+    font-weight: 580;
+}
+
+.title-division {
+    padding: 0.01px 20px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+@media screen and (max-width:599px) {
+    .profile-card {
+        margin: auto;
+    }
+    .reset-button {
+        margin: auto;
+    }
+}

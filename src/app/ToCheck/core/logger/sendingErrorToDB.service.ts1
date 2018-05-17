@@ -1,0 +1,67 @@
+import { Injectable, OnInit, AfterViewInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Response } from '@angular/http';
+import { Input } from '@angular/core/src/metadata/directives';
+import { Observable } from 'rxjs/Rx';
+import { LoggerService,AuthService } from '../../services/index';
+
+@Injectable()
+export class SendingErrorToDBService {
+
+    model: any = [];
+    errorData = [];
+    lastIndexSubmittedToDB = -1;
+
+    constructor(
+        private http: HttpClient,
+        private logger: LoggerService,
+        public authService:AuthService
+    ) { }
+
+
+    /**
+     * @param {any} model  represent type is any describing the displaying the error
+     * 
+     * @example
+     * insertLoggerData([
+        {
+       "level" : "error",
+       "message" : "Cannot read property of undefined",
+       "data" : "error data with stack trace"
+       "date" : "2010-09-28T06:57:36.625Z"
+    }
+     ])
+     *
+     * @returns  loggerResponse
+     */
+    insertLoggerData(model): Observable<any> {
+        let postURL = this.authService.mainURL + "insertlogger";
+        return this.http.post(postURL, model).
+            map((response: Response) => {
+                let loggerResponse = response;
+                if (loggerResponse) {
+                    return JSON.stringify(loggerResponse);
+                }
+                else {
+                    this.logger.warn("Response is empty");
+                }
+            }).catch(this.handleErrorObservable);
+    }
+
+
+    /**
+    * @param {Response | any} error  describing the error response
+    * 
+    * @example
+    * handleErrorObservable(Cannot read property of 'model' undefined)
+    *
+    * @returns  throw error message
+    */
+    private handleErrorObservable(error: Response | any) {
+        console.error(error.message || error);
+        return Observable.throw(error.message || error);
+    }
+
+}
+
+
